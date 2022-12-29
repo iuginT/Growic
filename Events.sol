@@ -67,6 +67,7 @@ contract SecondTask {
 
     function addFund(uint256 _amount) external alreadyDeposit value(_amount) {
             balance[msg.sender] += _amount;
+            emit FundsDeposited(msg.sender, amount);
     }
 
     function checkBalance() external view returns(uint _balance) {
